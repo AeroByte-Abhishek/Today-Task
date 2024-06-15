@@ -24,24 +24,7 @@ const allQuotesBottom = [
     ' "The stronger one wins, thats all" ',
     ' "Look forward with hope, not backwards with regret." ',
     ' "Make sacrifices for your dreams, or your dreams will become the sacrifice" ',
-]
-
-
-
-// const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {           /******* ("||") because of OR symbol If the data is found in this local storage then all objects is coming in this goal and if data is not found it will give empty object******/
-//   first: {
-//     name: '',
-//     completed: false,
-//   },
-//   second: {
-//     name: '',
-//     completed: false,
-//   },
-//   third: {
-//     name: '',
-//     completed: false,
-//   },
-// }            
+]       
 
 const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {}
 
@@ -49,18 +32,20 @@ let completedGoalsCount = Object.values(allGoals).filter(
   (goal) => goal.completed
 ).length
 
-progressValue.style.width = `${(completedGoalsCount / inputFields.length) * 100}%`
-progressValue.firstElementChild.innerText = `${completedGoalsCount}/${inputFields.length} completed`
+progressValue.style.width = `${(completedGoalsCount / Object.values(allGoals).length) * 100}%`
+progressValue.firstElementChild.innerText = `${completedGoalsCount}/${Object.values(allGoals).length} completed`
 progressLabel.innerText = allQuotes[completedGoalsCount]
 quote.innerText = allQuotesBottom[completedGoalsCount]
 
 checkBoxList.forEach((checkbox) => {
   checkbox.addEventListener('click', (e) => {
-    const allGoalsAdded = [...inputFields].every(function (input) {
-      return input.value
+    let count = 0;
+    inputFields.forEach((inp) => {
+      if(inp.value) {
+        count++;
+      }
     })
-
-    if (allGoalsAdded) {
+    if (count >= 3) {
       checkbox.parentElement.classList.toggle('completed')
       const inputId = checkbox.nextElementSibling.id
       allGoals[inputId].completed = !allGoals[inputId].completed
@@ -68,13 +53,14 @@ checkBoxList.forEach((checkbox) => {
         (goal) => goal.completed
       ).length
 
-      progressValue.style.width = `${(completedGoalsCount / inputFields.length) * 100}%`
-      progressValue.firstElementChild.innerText = `${completedGoalsCount}/${inputFields.length} completed`
+      progressValue.style.width = `${(completedGoalsCount / Object.values(allGoals).length) * 100}%`
+      progressValue.firstElementChild.innerText = `${completedGoalsCount}/${Object.values(allGoals).length} completed`
       progressLabel.innerText = allQuotes[completedGoalsCount]
       quote.innerText = allQuotesBottom[completedGoalsCount]
 
       localStorage.setItem('allGoals', JSON.stringify(allGoals))
     } else {
+      console.log('Welcome');
       progressBar.classList.add('show-error')
     }
   })
