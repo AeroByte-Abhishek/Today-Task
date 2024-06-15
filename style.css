@@ -156,16 +156,18 @@ button{
   align-items: center;
   background-color: #ebeef1;
   cursor: pointer;
+  width: 200px;
   border: none;
   color: #00a037;
-  border-radius: 25px;
-  box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-  inset -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+  -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
 }
 
 button:hover{
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-  -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+  inset -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  
 }
 
 
@@ -173,21 +175,23 @@ button:hover{
   font-size: 15px;
   font-weight: 500;
   padding: 20px;
+  width: 200px;
   margin: 10px;
   align-items: center;
   background-color: #ebeef1;
   cursor: pointer;
   border: none;
   color: #00a037;
-  border-radius: 25px;
-  box-shadow:  10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-   -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  border-radius: 30px;
+  box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+  inset -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  
 transition: box-shadow 0.8s ease;
   }
 
   .reset-button:hover{
-    box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-  inset -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+    box-shadow:  10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+   -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
   }
 
 .goal-hidden{
@@ -228,19 +232,24 @@ transition: box-shadow 0.8s ease;
     height: 24px;
   }
   .reset-button{
-    font-size: 10px;
+    font-size: 14px;
   font-weight: 500;
   padding: 10px;
-  width: 150px;
+  width: 250px;
   height: 50px;
   border-radius: 50px;
   }
   button{
-    font-size: 10px;
+    font-size: 14px;
   font-weight: 500;
   padding: 10px;
-  width: 150px;
+  width: 250px;
   height: 50px;
   border-radius: 50px;
+  }
+
+  .buttons{
+    display:grid;
+    align-items: center;
   }
 }
