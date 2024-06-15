@@ -27,7 +27,7 @@
           <div class="progress-value">
             <span>2/3 Completed</span>
           </div>
-          <p class="error-label">Please set all the 3 goals!</p>
+          <p class="error-label">Please set all the goals!</p>
         </div>
 
         <div class="goal-container">
@@ -75,7 +75,7 @@
             placeholder="Add new goal... "
           />
         </div>
-        <div class="goal-container">
+        <div class="goal-container goal-hidden">
           <div class="custom-checkbox">
             <img
               class="check-icon"
@@ -83,14 +83,14 @@
               alt="check-icon"
             />
           </div>
-          <input
+           <input
             id="fourth"
             class="goal-input"
             type="text"
             placeholder="Add new goal... "
           />
         </div>
-        <div class="goal-container">
+        <div class="goal-container goal-hidden">
           <div class="custom-checkbox">
             <img
               class="check-icon"
@@ -104,11 +104,12 @@
             type="text"
             placeholder="Add new goal... "
           />
+        
         </div>
-
-        <button class="show-more-tasks"> Add More Tasks</button>
-
-
+          <div class="buttons">
+          <button class="show-more-tasks" onclick="showMore()"> Add More Tasks</button>
+          <button class="reset-button">Reset all your task</button>
+        </div>
         <p class="quote">“Move one step ahead, today!”</p>
         <p class="made-with">Made with ❤️ by Abhishek Mishra</p>
       </div>

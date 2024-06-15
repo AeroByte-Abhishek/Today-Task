@@ -148,6 +148,57 @@ main {
     text-decoration-line: line-through;
 }
 
+button{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 20px;
+  margin: 10px;
+  align-items: center;
+  background-color: #ebeef1;
+  cursor: pointer;
+  border: none;
+  color: #00a037;
+  border-radius: 25px;
+  box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+  inset -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+}
+
+button:hover{
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+  -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+}
+
+
+.reset-button{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 20px;
+  margin: 10px;
+  align-items: center;
+  background-color: #ebeef1;
+  cursor: pointer;
+  border: none;
+  color: #00a037;
+  border-radius: 25px;
+  box-shadow:  10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+   -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+transition: box-shadow 0.8s ease;
+  }
+
+  .reset-button:hover{
+    box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+  inset -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  }
+
+.goal-hidden{
+  display: none;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
 
 @media (max-width: 768px) {
   .title {
@@ -176,20 +227,20 @@ main {
   .progress-bar {
     height: 24px;
   }
-}
-
-button{
-  font-size: 15px;
+  .reset-button{
+    font-size: 10px;
   font-weight: 500;
-  padding: 20px;
-  margin: 10px;
-  margin-left: 34%;
-  align-items: center;
-  background-color: #ebeef1;
-  cursor: pointer;
-  border: none;
-  color: #00a037;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
   border-radius: 50px;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-  -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+  }
+  button{
+    font-size: 10px;
+  font-weight: 500;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  }
 }

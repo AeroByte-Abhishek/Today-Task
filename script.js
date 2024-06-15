@@ -6,30 +6,24 @@ const progressBar = document.querySelector('.progress-bar')
 const progressValue = document.querySelector('.progress-value')
 const quote = document.querySelector('.quote') 
 
-document.addEventListener('DOMContentLoaded', function(){
-  const moreTasksButton = document.querySelector('.show-more-tasks');
-  const inputFourth = document.querySelector('#fourth')
-  const inputFifth = document.querySelector('#fifth')
-  moreTasksButton.addEventListener('click', function(){
-  
-    inputFourth.style.display = 'block';
-    inputFifth.style.display = 'block';
-    moreTasksButton.style.display = 'none';
-  });
-})
 
 const allQuotes = [
   'Focus on the step in front of you, not the whole staircase!',
-  'Believe yo can, and you are halfway there.',
+  'Believe you can, and you are halfway there.',
   'Keep going you are getting there',
-  'Whoa! You just completed all the goals, time for chill :D',
+  'Impressive work! You are making great strides',
+  'Incredible effort! You are crushing it',
+  'Outstanding work! You are unstoppable!',
+  'Well Done! Your dedication shines through in your results.',
 ]
 
 const allQuotesBottom = [
     ' "Move one step ahead, today!" ',
     ' "Only you can change your destiny." ',
     ' "Be the energy you want to attract." ',
+    ' "The stronger one wins, thats all" ',
     ' "Look forward with hope, not backwards with regret." ',
+    ' "Make sacrifices for your dreams, or your dreams will become the sacrifice" ',
 ]
 
 
@@ -117,4 +111,32 @@ inputFields.forEach((input) => {
     localStorage.setItem('allGoals', JSON.stringify(allGoals))
   })
 })
+ function showMore() {
+   const hiddenGoal = document.querySelectorAll('.goal-hidden') // 1
+   if (hiddenGoal.length === 1) {
+     const showMoreButton = document.querySelector('.show-more-tasks');
+     showMoreButton.style.display = 'none';
+   }
+   hiddenGoal[0].classList.remove('goal-hidden'); // 1 -> remove hidden class
+ }
 
+ const allTemp = Object.values(allGoals);
+
+ if (allTemp.length === 4) {
+   const hiddenGoal = document.querySelectorAll('.goal-hidden');
+   hiddenGoal[0].classList.remove('goal-hidden');
+ }
+else if (allTemp.length === 5) {
+   const hiddenGoal = document.querySelectorAll('.goal-hidden');
+   hiddenGoal[0].classList.remove('goal-hidden');
+   hiddenGoal[1].classList.remove('goal-hidden');
+   const showMoreButton = document.querySelector('.show-more-tasks');
+   showMoreButton.style.display = 'none';
+ }
+
+function resetLocalStorage(){
+  localStorage.clear();
+  location.reload();  //Refresh the page
+}
+
+document.querySelector('.reset-button').addEventListener('click', resetLocalStorage);
