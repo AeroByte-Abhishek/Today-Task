@@ -45,7 +45,7 @@ checkBoxList.forEach((checkbox) => {
         count++;
       }
     })
-    if (count >= 3) {
+    if (count > 4) {
       checkbox.parentElement.classList.toggle('completed')
       const inputId = checkbox.nextElementSibling.id
       allGoals[inputId].completed = !allGoals[inputId].completed
@@ -60,7 +60,6 @@ checkBoxList.forEach((checkbox) => {
 
       localStorage.setItem('allGoals', JSON.stringify(allGoals))
     } else {
-      console.log('Welcome');
       progressBar.classList.add('show-error')
     }
   })
