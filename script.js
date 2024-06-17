@@ -45,7 +45,7 @@ checkBoxList.forEach((checkbox) => {
         count++;
       }
     })
-    if (count > 4) {
+    if (count >= 3) {
       checkbox.parentElement.classList.toggle('completed')
       const inputId = checkbox.nextElementSibling.id
       allGoals[inputId].completed = !allGoals[inputId].completed
